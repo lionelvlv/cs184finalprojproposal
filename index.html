@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+		<style>
+			h1 {
+				text-align: center;
+			}
+
+			.container {
+				margin: 0 auto;
+				padding: 60px 20%;
+			}
+
+			figure {
+				text-align: center;
+			}
+
+			img {
+				display: inline-block;
+			}
+
+			body {
+				font-family: 'Inter', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<h1>Splat Painter</h1>
+		<div style="text-align: center;">Patrick Lee, Lionel Verano, Jordan Argel, Eric Lin</div>
+
+		<br>
+
+		<h2>Summary</h2>
+		<p>The purpose of Splat Painter is to modify the hue and saturation of gaussians within a gaussian splatting scene. This will allow a user to use their mouse cursor as a brush to "paint" over the existing scene similar to brush tools in raster graphics editors.</p>
+
+		<h2>Problem Description</h2>
+		<p>The problem posed is most gaussian splatting viewers have limited ways to edit the scene currently being viewed. We want to allow the user to change the colors of objects within the scene whilst being able to preserve the lighting already present within the scene. This opens up the possibilities to imagine real life environments with different colors applied. For example, one could change the colors of the walls of a room or change the fabric color of a couch. Or even see real life through an impossible manner such as making grass look like a rainbow. One may even be able to reconstruct an empty canvas and paint the canvas through our program.</p>
+
+		<p>A few challenges in this project would be learning to understand the gaussian splat scenes are structured and gsplat and splatfacto's code base. We expect to read through a lot of gsplat's documentation for this project in order to solve it. We then need to figure out a method to both capture the area of splats in a bounded volume for our cursor to act as a brush and then apply color shifts to the gaussian's color data to change its appearances.</p>
+
+		<h2>Goals and Deliverables</h2>
+		<h3>What we plan to deliver</h3>
+		<p>To show results, we'll show images of unmodified splat scenes and resulting images with different colors applied to the scene</p>
+
+		<h3>What we hope to deliver</h3>
+		<ul>
+			<li>We'll also show a screen recording demo of us using the tool to paint in real time within Splatfacto</li>
+			<li>This will be a modified version of Splatfacto which includes our painting tool</li>
+			<li>Ideally, our painting tool should be able to paint in real time. Performance may vary wildly depending on the GPU used due to the nature of the gaussian splatting hardware requirements</li>
+			<li>Our project shouldn't noticeably slow down the existing nerfstudio viewer's performance</li>
+		</ul>
+
+		<h2>Schedule</h2>
+		<h3>Week 1 (4/7 - 4/13):</h3>
+		<ul>
+			<li>Become familiar with gsplat and splatfacto</li>
+			<li>Ensure we can run splatfacto locally on our machines</li>
+			<li>Implement raycasting to directly detect gaussians in the scene using our mouse cursor</li>
+		</ul>
+
+		<h3>Week 2 (4/14 - 4/20):</h3>
+		<ul>
+			<li>End of this week is the milestone date!</li>
+			<li>Implement color changing on selected gaussians</li>
+			<li>We can hardcode this to change selected gaussians to a specific color like magenta</li>
+			<li>Implement a bounding volume to select multiple gaussians</li>
+			<li>Try to capture multiple gaussians within a sphere or cube at the point the mouse cursor lands</li>
+			<li>Update webpage to show off milestone progress</li>
+			<li>Create 1-minute video for milestone submission</li>
+		</ul>
+
+		<h3>Week 3 (4/21 - 4/27):</h3>
+		<ul>
+			<li>Implement the UI within splatfacto to allow different brush sizes and color adjustment sliders</li>
+			<li>Color sliders include hue and saturation</li>
+			<li>Maybe also an alpha slider to remove parts of the scene</li>
+			<li>Implement logic to split gaussians to fit the precision of targeted painting area</li>
+			<li>If you attempt to change the color of a gaussian but your brush size is only covering half of the gaussian, then we must split the gaussian such as half of it remains the original color and other half within the cursor becomes the new color</li>
+			<li>This feature may not be needed</li>
+		</ul>
+
+		<h3>Week 4 (4/28 - 5/4):</h3>
+		<ul>
+			<li>End of this week is the project deadline!</li>
+			<li>Optimize any performance issues</li>
+			<li>Allow user to save scene after applying color changes</li>
+			<li>Preserve color changes in any export options that exist within splatfacto</li>
+			<li>Update final report on project webpage</li>
+			<li>Create 1-2 minute video showing off final project results</li>
+			<li>Add any more quality of life features</li>
+			<li>Undo using ctrl + z</li>
+		</ul>
+
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://docs.gsplat.studio/main/">gsplat's documentation</a></li>
+			<li><a href="https://docs.nerf.studio/nerfology/methods/splat.html">Splatfacto website</a></li>
+			<li><a href="https://youtu.be/A1Gbycj0bWw?si=be9hhdD1JjPRUDmJ">Nerfstudio gaussian splatting video</a></li>
+			<li><a href="https://youtu.be/9p_i9nKZA4Q?si=qpMZtmrRClLkDl9K">Additional splatting video</a></li>
+		</ul>
+		</div>
+	</body>
+</html>
