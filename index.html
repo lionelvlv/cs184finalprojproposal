@@ -33,7 +33,10 @@
 		<br>
 
 		<h2>Summary</h2>
-		<p>The purpose of Splat Painter is to modify the hue and saturation of gaussians within a gaussian splatting scene. This will allow a user to use their mouse cursor as a brush to "paint" over the existing scene similar to brush tools in raster graphics editors.</p>
+		<p>
+			The purpose of Splat Painter is to modify the hue and saturation of gaussians within a gaussian splatting scene. This will allow a user to use their mouse cursor as a brush to "paint" over the existing scene similar to brush tools in raster graphics editors.
+			We’ll be using Nerfstudio’s gsplat and Splatfacto as a starting point and build from these tools.
+		</p>
 
 		<h2>Problem Description</h2>
 		<p>The problem posed is most gaussian splatting viewers have limited ways to edit the scene currently being viewed. We want to allow the user to change the colors of objects within the scene whilst being able to preserve the lighting already present within the scene. This opens up the possibilities to imagine real life environments with different colors applied. For example, one could change the colors of the walls of a room or change the fabric color of a couch. Or even see real life through an impossible manner such as making grass look like a rainbow. One may even be able to reconstruct an empty canvas and paint the canvas through our program.</p>
@@ -47,16 +50,22 @@
 		<h3>What we hope to deliver</h3>
 		<ul>
 			<li>We'll also show a screen recording demo of us using the tool to paint in real time within Splatfacto</li>
-			<li>This will be a modified version of Splatfacto which includes our painting tool</li>
+			<ul>
+				<li>This will be a modified version of Splatfacto which includes our painting tool</li>
+			</ul>
 			<li>Ideally, our painting tool should be able to paint in real time. Performance may vary wildly depending on the GPU used due to the nature of the gaussian splatting hardware requirements</li>
-			<li>Our project shouldn't noticeably slow down the existing nerfstudio viewer's performance</li>
+			<ul>
+				<li>Our project shouldn't noticeably slow down the existing nerfstudio viewer's performance</li>
+			</ul>
 		</ul>
 
 		<h2>Schedule</h2>
 		<h3>Week 1 (4/7 - 4/13):</h3>
 		<ul>
 			<li>Become familiar with gsplat and splatfacto</li>
-			<li>Ensure we can run splatfacto locally on our machines</li>
+			<ul>
+				<li>Ensure we can run splatfacto locally on our machines</li>
+			</ul>
 			<li>Implement raycasting to directly detect gaussians in the scene using our mouse cursor</li>
 		</ul>
 
@@ -64,9 +73,13 @@
 		<ul>
 			<li>End of this week is the milestone date!</li>
 			<li>Implement color changing on selected gaussians</li>
-			<li>We can hardcode this to change selected gaussians to a specific color like magenta</li>
+			<ul>
+				<li>We can hardcode this to change selected gaussians to a specific color like magenta</li>
+			</ul>
 			<li>Implement a bounding volume to select multiple gaussians</li>
-			<li>Try to capture multiple gaussians within a sphere or cube at the point the mouse cursor lands</li>
+			<ul>
+				<li>Try to capture multiple gaussians within a sphere or cube at the point the mouse cursor lands</li>
+			</ul>
 			<li>Update webpage to show off milestone progress</li>
 			<li>Create 1-minute video for milestone submission</li>
 		</ul>
@@ -74,11 +87,15 @@
 		<h3>Week 3 (4/21 - 4/27):</h3>
 		<ul>
 			<li>Implement the UI within splatfacto to allow different brush sizes and color adjustment sliders</li>
-			<li>Color sliders include hue and saturation</li>
-			<li>Maybe also an alpha slider to remove parts of the scene</li>
+			<ul>
+				<li>Color sliders include hue and saturation</li>
+				<li>Maybe also an alpha slider to remove parts of the scene</li>
+			</ul>
 			<li>Implement logic to split gaussians to fit the precision of targeted painting area</li>
-			<li>If you attempt to change the color of a gaussian but your brush size is only covering half of the gaussian, then we must split the gaussian such as half of it remains the original color and other half within the cursor becomes the new color</li>
-			<li>This feature may not be needed</li>
+			<ul>
+				<li>If you attempt to change the color of a gaussian but your brush size is only covering half of the gaussian, then we must split the gaussian such as half of it remains the original color and other half within the cursor becomes the new color</li>
+				<li>This feature may not be needed</li>
+			</ul>
 		</ul>
 
 		<h3>Week 4 (4/28 - 5/4):</h3>
@@ -90,7 +107,9 @@
 			<li>Update final report on project webpage</li>
 			<li>Create 1-2 minute video showing off final project results</li>
 			<li>Add any more quality of life features</li>
-			<li>Undo using ctrl + z</li>
+			<ul>
+				<li>Undo using ctrl + z</li>
+			</ul>
 		</ul>
 
 		<h2>Resources</h2>
