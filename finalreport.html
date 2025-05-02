@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+		<style>
+			h1 {
+				text-align: center;
+			}
+
+			.container {
+				margin: 0 auto;
+				padding: 60px 20%;
+			}
+
+			figure {
+				text-align: center;
+			}
+
+			img {
+				display: inline-block;
+			}
+
+			body {
+				font-family: 'Inter', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<h1>Splat Painter MILESTONE</h1>
+		<div style="text-align: center;">Team 24: Patrick Lee, Lionel Verano, Jordan Argel, Eric Lin</div>
+
+        <figure>
+			<img src="./images/milestone/rainbow_header.png" alt="Rainbow Campanile Scene" style="width:70%;"/>
+			<figcaption>Rainbow Campanile Scene</figcaption>
+		</figure>
+		
+		<br />
+		Link to original proposal: <a href="https://lionelvlv.github.io/cs184finalprojproposal/">https://lionelvlv.github.io/cs184finalprojproposal/</a>
+		<br />
+        <br />
+		Link to milestone webpage: <a href="https://lionelvlv.github.io/cs184finalprojproposal/milestone.html">https://lionelvlv.github.io/cs184finalprojproposal/milestone.html</a>
+		<br />
+        <br />
+		Link to milestone presentation slides: <a href="https://docs.google.com/presentation/d/1BeTmgsHKelIx9dDM8IEYcSKHKlAD_SY7ZTUbwKCLgH8/edit?usp=sharing">https://docs.google.com/presentation/d/1BeTmgsHKelIx9dDM8IEYcSKHKlAD_SY7ZTUbwKCLgH8/edit?usp=sharing</a>
+        <br />
+        <br />
+		Link to milestone video: <a href="https://youtu.be/aUT8wkmP_JI">https://youtu.be/aUT8wkmP_JI</a>
+        <div style="display: flex;  align-items: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aUT8wkmP_JI?si=Q1aM_IB0JCjEkYIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+        <br />
+        
+
+		<h2>Background and Project Scope</h2>
+		<p>
+			We were originally planning on modifying the code for gsplat to adjust the color properties of Gaussians within the scene. However, this would involve modifying PyTorch tensors and digging through Nerfstudio’s large codebase which would have been way too big of a scope within the project’s timeline.
+            We will instead be forking Viser, Nerfstudio’s 3D web-based visualizer build in Python. 
+            Gaussian splat rendering is still a work in progress feature in Viser being able to render the splat scenes without spherical harmonic support. 
+            Our group will be adding a feature to paint the gaussians using the mouse cursor. We will be using Viser’s API to trigger an event on mouse clicks and use raycasting to capture the splat points within our selection area and modify their color properties.
+		</p>
+        <h2>Setup Process and Challenges</h2>
+        <p>Setting up the correct environment with all the necessary packages took a lot of work.
+            During Patrick’s initial setup of Viser, he ran into a bug present in the development install of viser not present in the version when `pip install viser` is run. In the development version, Gaussian splat scenes were outputting empty scenes. He reported the issue to one of the contributors of Nerfstudio and it got fixed in the same day.
+            Meanwhile, Jordan and Lionel faced additional challenges getting the environment running under WSL due to OS constraints, which required extra debugging. Fortunately, we now have a working setup across all our systems.
+        </p>
+
+        <h2>Project Progress and Upcoming Goals</h2>
+        <p>
+            After reviewing the codebase, we were given advice to render a single gaussian as seen here.
+        </p>
+
+        <figure>
+			<img src="./images/milestone/single_gaussian.png" alt="Single Gaussian rendered for testing." style="width:40%;"/>
+			<figcaption>Single Gaussian rendered for testing.</figcaption>
+		</figure>
+        
+        <p>
+            After we rendered a single Gaussian, we figured out how to edit the color properties in the scene data. 
+            We took the loaded in data stored into the SplatFile class and we iterated through all the RGB values 
+            and were able to set them to new rgb values. We then experimented with adjusting the RGB values based
+             on the position of the Gaussian center values and we tried converting them to HSV values to maintain
+              the saturation and value properties while adjusting the hue.
+        </p>
+
+        <p>
+            In the upcoming weeks, we'll get raycasting working. We currently have a way to make a selection box within the screen by clicking and holding our mouse cursor. We just need to use the extrinsic and intrinsic properties of the Viser
+            camera object to project rays into the world and capture which Gaussians to select to modify them.
+        </p>
+
+        <p>Here are some examples of color filters we have applied to our scene</p>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="./images/milestone/original_campanile.png" width="400px"/>
+				  <figcaption>Original Campanile scene.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="./images/milestone/rainbow_2_campanile.png" width="400px"/>
+				  <figcaption>Adjusted hue based on Gaussian center position in space.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="./images/milestone/rainbow_render.png" width="400px"/>
+				  <figcaption>Another rainbow Campanile variant.</figcaption>
+				</td>
+                <td style="text-align: center;">
+                    <img src="./images/milestone/random_uniform_hue.png" width="400px"/>
+                    <figcaption>Campanile scene's hue uniformly adjusted.</figcaption>
+                  </td>
+			  </tr>
+              <tr>
+				<td style="text-align: center;">
+				  <img src="./images/milestone/random_individual_colors.png" width="400px"/>
+				  <figcaption>Individual Gaussians assigned random hues.</figcaption>
+				</td>
+                <td style="text-align: center;">
+                    <img src="./images/milestone/black_white_campanile.png" width="400px"/>
+                    <figcaption>Black and white Campanile scene.</figcaption>
+                  </td>
+			  </tr>
+			</table>
+		</div>
+        <br />
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hh5Yzcqxm5w?si=Hfxje7t5y2SqFjfr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div>Link to demo video: <a href="https://youtu.be/Hh5Yzcqxm5w?si=u37WMKWpO01fewUI">https://youtu.be/Hh5Yzcqxm5w?si=u37WMKWpO01fewUI</a></div>
+        </div>
+		</div>
+	</body>
+</html>
