@@ -53,6 +53,7 @@
 					<li><a href="https://docs.google.com/presentation/d/1mA2xdhBzQBNeLK94mpuz4zAuokbl8vjYM2htu2S1KsI/edit?usp=sharing" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Slides</a></li>
 					<li><a href="https://www.youtube.com/watch?v=aUT8wkmP_JI" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Video Report</a></li>
 					<li><a href="index.html" style="text-decoration: none; color: #007bff; font-weight: 600;">Proposal</a></li>
+					<li><a href="gallery.html" style="text-decoration: none; color: #007bff; font-weight: 600;">Gallery</a></li>
 				</ul>
 			</nav>
 
@@ -63,6 +64,7 @@
 					<li><a href="https://docs.google.com/presentation/d/1mA2xdhBzQBNeLK94mpuz4zAuokbl8vjYM2htu2S1KsI/edit?usp=sharing" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Slides</a></li>
 					<li><a href="https://www.youtube.com/watch?v=aUT8wkmP_JI" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Video Report</a></li>
 					<li><a href="https://drive.google.com/file/d/1dEfXOewXxtbCNfSiO0YAF_fQnH8-A6FP/preview" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Video Demo</a></li>
+					<li><a href="gallery.html" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Gallery</a></li>
 				</ul>
 			</section>
 			<div style="margin-top: 60px;"></div> <!-- Spacer to prevent content overlap with navbar -->
@@ -179,42 +181,53 @@
 			</table>
 		</div>
         
-        <h2>Video Demonstrations</h2>
-		<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/KW4eVKy3m0Y?si=H02jTkzAErK7BnjV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <div>Link to final demo video: <a href="#">[INSERT FINAL VIDEO LINK]</a></div> -->
+		<h2 style="text-align: center;">Video Demonstrations</h2>
+			<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+				<div style="text-align: center;"></div>
+					<div style="margin-top: 10px;">
+						<a href="https://www.youtube.com/watch?v=KW4eVKy3m0Y" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">Watch on YouTube</a>
+					</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/KW4eVKy3m0Y?si=H02jTkzAErK7BnjV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					
+				</div>
 
-			<iframe src="https://drive.google.com/file/d/1dEfXOewXxtbCNfSiO0YAF_fQnH8-A6FP/preview" width="560" height="315" allow="autoplay"></iframe>
-        </div>
+				<div style="text-align: center;">
+					<div style="margin-top: 10px;">
+						<a href="https://drive.google.com/file/d/1dEfXOewXxtbCNfSiO0YAF_fQnH8-A6FP/view" target="_blank" style="text-decoration: none; color: #007bff; font-weight: 600;">View on Google Drive</a>
+					</div>
+					<iframe src="https://drive.google.com/file/d/1dEfXOewXxtbCNfSiO0YAF_fQnH8-A6FP/preview" width="560" height="315" allow="autoplay"></iframe>
+					
+				</div>
+			</div>
 
 		
 
-		<h2>References</h2>
-        <ul>
-            <li>Creating a brush tool: <a href="https://www.youtube.com/watch?v=EpWTfLMfF6Y">https://www.youtube.com/watch?v=EpWTfLMfF6Y</a></li>
-            <li>Viser Studio API: <a href="https://viser.studio/main/scene_api/">https://viser.studio/main/scene_api/</a></li>
-            <li>Where to start with 3D Gaussian Splatting: <a href="https://youtu.be/9p_i9nKZA4Q">https://youtu.be/9p_i9nKZA4Q</a></li>
-        </ul>
+		<h2 style="text-align: center;">References</h2>
+		<ul style="text-align: center; list-style-type: none; padding: 0;">
+			<li>Creating a brush tool: <a href="https://www.youtube.com/watch?v=EpWTfLMfF6Y">https://www.youtube.com/watch?v=EpWTfLMfF6Y</a></li>
+			<li>Viser Studio API: <a href="https://viser.studio/main/scene_api/">https://viser.studio/main/scene_api/</a></li>
+			<li>Where to start with 3D Gaussian Splatting: <a href="https://youtu.be/9p_i9nKZA4Q">https://youtu.be/9p_i9nKZA4Q</a></li>
+		</ul>
 
-		<h2>Contributions</h2>
-        <table>
-            <tr>
-                <td><strong>Patrick</strong></td>
-                <td>Debugging Viser, initial setup, reporting issues to Nerfstudio, and adding additional UI features. Also developed rectangle select and the filter options.</td>
-            </tr>
-            <tr>
-                <td><strong>Lionel</strong></td>
-                <td>Initial setup, debugging with Windows. Implemented and developed brush stroke and image mapping. Webpage and video editing.</td>
-            </tr>
-            <tr>
-                <td><strong>Jordan and Eric</strong></td>
-                <td>Wrote the report and developed the presentation slides</td>
-            </tr>
-            <tr>
-                <td><strong>Team-wide</strong></td>
-                <td>Developing painting interactions, color transformations, and user interface optimizations</td>
-            </tr>
-        </table>
+		<h2 style="text-align: center;">Contributions</h2>
+		<table style="margin: 0 auto; border-collapse: collapse; width: 80%;">
+			<tr>
+				<td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>Patrick</strong></td>
+				<td style="border: 1px solid #ddd; padding: 10px;">Debugging Viser, initial setup, reporting issues to Nerfstudio, and adding additional UI features. Also developed rectangle select and the filter options.</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>Lionel</strong></td>
+				<td style="border: 1px solid #ddd; padding: 10px;">Initial setup, debugging with Windows. Implemented and developed brush stroke and image mapping. Webpage and video editing.</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>Jordan and Eric</strong></td>
+				<td style="border: 1px solid #ddd; padding: 10px;">Wrote the report and developed the presentation slides</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>Team-wide</strong></td>
+				<td style="border: 1px solid #ddd; padding: 10px;">Developing painting interactions, color transformations, and user interface optimizations</td>
+			</tr>
+		</table>
 		</div>
 	</body>
 </html>
