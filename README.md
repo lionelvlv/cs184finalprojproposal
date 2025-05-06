@@ -10,3 +10,5 @@ Lionel Verano: Initial setup, debugging with Windows. Implemented and developed 
 Jordan Argel and Eric Lin: Wrote the report and developed the presentation slides
 
 Team-wide: Developing painting interactions, color transformations, and user interface optimizations
+
+## Video Report: https://www.youtube.com/watch?v=KW4eVKy3m0Y
